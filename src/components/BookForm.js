@@ -12,18 +12,13 @@ const BookForm = () => {
 
   return (
     <>
-      <h2 className="form-text">Add New Books!</h2>
+      <h2 className="form-text">Add New Books</h2>
       <form className="form">
-        <BookInput refe={title} type="text" placeholder="BooK Tiltle" />
-        <BookInput refe={author} type="text" placeholder="Author" />
+        <BookInput refObj={title} type="text" placeholder="BooK Tiltle" />
+        <BookInput refObj={author} type="text" placeholder="Author" />
         <Interaction
           name="Add Book"
-          Click={() => dispatch(
-            addBook(
-              title.current.value,
-              author.current.value,
-            ),
-          )}
+          Click={() => dispatch(addBook(title.current.value, author.current.value))}
         />
       </form>
     </>
