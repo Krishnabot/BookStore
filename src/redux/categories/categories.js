@@ -1,7 +1,5 @@
-const checkBooks = 'bookstore/categories.js/checkBooks';
-const initialState = {
-  categoriesList: [],
-};
+const checkBooks = 'checkBooks';
+const initialState = [];
 
 export default function categoryReducer(state = initialState, action) {
   switch (action.type) {
@@ -12,7 +10,7 @@ export default function categoryReducer(state = initialState, action) {
   }
 }
 
-export function addbook() {
+export function category() {
   return {
     type: checkBooks,
     text: 'Under construction',
