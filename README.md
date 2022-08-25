@@ -1,4 +1,4 @@
-# Math-Magician App
+# Book Store
 A Book Strore CMS APP. Key features of App :-
 - Displays a list of books.
 - New Book can Be added.
@@ -8,6 +8,7 @@ A Book Strore CMS APP. Key features of App :-
 ## Built With
 
 - React [Create React App](https://github.com/facebook/create-react-app)
+- Redux 
 
 ## Project SnapShot
 ![Book Store SnapShot Not Available Yet]()
@@ -67,3 +68,4 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - [Zeplin project](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378)
+- [Soham De Roy from freecodecamp.org](https://www.freecodecamp.org/news/what-is-redux-store-actions-reducers-explained/)
