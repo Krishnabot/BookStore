@@ -4,7 +4,7 @@ import BookForm from './BookForm';
 
 const Books = () => (
   <>
-    <div className="Books-Continer">
+    <div className="Books-Container">
       <BookContainer
         name="Harry Potter and Deathly Hallows"
         catagory="fantasy"
