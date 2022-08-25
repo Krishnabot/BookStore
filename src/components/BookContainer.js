@@ -1,19 +1,23 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Interaction from './Interaction';
+import { removeBook } from '../redux/books/books';
 
 const BookContainer = (props) => {
+  const booksList = useSelector((state) => state.bookReducer);
+  const dispatch = useDispatch();
   const {
-    name, catagory, author, completed, chapter,
+    category, completed,
   } = props;
-  return (
-    <div className="Book-wrap">
+  return (booksList.map((book) => (
+    <div className="Book-wrap" key={book.id}>
       <div>
-        <p className="genre">{catagory}</p>
-        <h1 className="title">{name}</h1>
-        <h3 className="author">{author}</h3>
+        <p className="genre">{category}</p>
+        <h1 className="title">{book.title}</h1>
+        <h3 className="author">{book.author}</h3>
         <div className="interaction-wrap">
           <Interaction name="Comments" />
-          <Interaction name="Remove" />
+          <Interaction Click={() => dispatch(removeBook(book.id))} name="Remove" />
           <Interaction name="Edit" />
         </div>
       </div>
@@ -28,14 +32,14 @@ const BookContainer = (props) => {
         <p className="currentchapter">Current Chapter</p>
         <p className="currentchapter">
           Chapter
-          {chapter}
+          {book.chapter}
         </p>
         <button className="updateProgress" type="button">
           UPDATE PROGRESS
         </button>
       </div>
     </div>
-  );
+  )));
 };
 
 export default BookContainer;

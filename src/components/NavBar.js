@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <nav className="Nav-bar">
-      <h1>Bookstore CMS</h1>
+      <h1>Awesome Bookstore</h1>
       <div className="links-wrap">
         {links.map((link) => (
           <li key={link.id}>
