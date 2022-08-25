@@ -1,4 +1,4 @@
-# Math-Magician App
+# Book Store
 A Book Strore CMS APP. Key features of App :-
 - Displays a list of books.
 - New Book can Be added.
