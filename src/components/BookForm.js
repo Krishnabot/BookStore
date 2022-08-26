@@ -61,10 +61,11 @@ const BookForm = () => {
             change={eventHandler}
             placeholder="category"
           />
+
+          <button type="submit" className={styles.add_book}>
+            Add Book
+          </button>
         </div>
-        <button type="submit" className={styles.add_book}>
-          Add Book
-        </button>
       </form>
     </>
   );
