@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { v4 as uuid } from 'uuid';
+import uuid from 'uuid-js';
 import { fetchBook, bookUrl } from '../api/consumeAPI';
 
 const ADDINGBOOKS = 'books/ADDINGBOOKS';
@@ -15,10 +15,8 @@ const addBook = createAsyncThunk(
       author,
       category,
     };
-    await axios
-      .post(`${bookUrl}/`, book)
-      .then(() => thunkAPI.dispatch(fetchBook()));
-    const books = thunkAPI.getState().bookList;
+    await axios.post(`${bookUrl}`, book).then(() => thunkAPI.dispatch(fetchBook()));
+    const books = thunkAPI.getState().booksList;
     return books;
   },
 );
@@ -27,13 +25,13 @@ const removeBook = createAsyncThunk(REMOVEBOOKS, async (id, thunkAPI) => {
   await axios
     .delete(`${bookUrl}/${id}`)
     .then(() => thunkAPI.dispatch(fetchBook()));
-  const books = thunkAPI.getState.bookList;
+  const books = thunkAPI.getState.booksList;
   return books;
 });
 
 const booksList = (state) => state.bookList;
 
-const storeSlice = createSlice({
+const storeSlicer = createSlice({
   name: 'books',
   initialState: [],
   extraReducers: {
@@ -43,6 +41,6 @@ const storeSlice = createSlice({
   },
 });
 
-export {
-  addBook, removeBook, booksList, storeSlice,
-};
+export { addBook, removeBook, booksList };
+
+export default storeSlicer.reducer;

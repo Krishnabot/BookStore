@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Interaction = (props) => {
-  const { name, Click } = props;
+  const { name, Click, id } = props;
   return (
     <div>
-      <button onClick={Click} className="button" type="button">
+      <button onClick={Click} id={id} className="button" type="button">
         {name}
       </button>
     </div>
