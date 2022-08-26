@@ -9,6 +9,12 @@ A Book Strore CMS APP. Key features of App :-
 
 - React [Create React App](https://github.com/facebook/create-react-app)
 - Redux 
+- Axiom 
+
+## Resources
+- [Postman API Platform](https://www.postman.com/)
+- [Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739)
+- 
 
 ## Project SnapShot
 ![Book Store SnapShot Not Available Yet]()
@@ -69,3 +75,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 - [Zeplin project](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378)
 - [Soham De Roy from freecodecamp.org](https://www.freecodecamp.org/news/what-is-redux-store-actions-reducers-explained/)
+- [Prevent an empty submission in React](https://stackoverflow.com/questions/55088199/prevent-an-empty-submission-in-react)
+- [How To Use Axios with React](https://www.digitalocean.com/community/tutorials/react-axios-react)
+

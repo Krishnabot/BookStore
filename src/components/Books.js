@@ -1,19 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookContainer from './BookContainer';
 import BookForm from './BookForm';
+import { removeBook } from '../redux/books/books';
+import { fetchBook } from '../redux/api/consumeAPI';
 
-const Books = () => (
-  <>
-    <div className="Books-Container">
-      <BookContainer
-        name="Harry Potter and Deathly Hallows"
-        catagory="fantasy"
-        author="J.K. Rowling"
-        completed="34"
-      />
-    </div>
-    <BookForm />
-  </>
-);
+const Books = () => {
+  const bookList = useSelector((state) => state.bookList);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchBook());
+  }, []);
+
+  const removeHandeler = (e) => {
+    dispatch(removeBook(e.target.id));
+  };
+  return (
+    <>
+      <div className="Books-Container">
+        {bookList.map((book) => (
+          <BookContainer
+            name={book.title}
+            catagory="fantasy"
+            author={book.author}
+            completed="34"
+            id={book.id}
+            key={book.key}
+            Click={removeHandeler}
+          />
+        ))}
+      </div>
+      <BookForm />
+    </>
+  );
+};
 export default Books;

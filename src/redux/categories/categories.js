@@ -1,9 +1,9 @@
-const checkBooks = 'checkBooks';
+const CHECKBOOKS = 'CHECKBOOKS';
 const initialState = [];
 
 export default function categoryReducer(state = initialState, action) {
   switch (action.type) {
-    case checkBooks:
+    case CHECKBOOKS:
       return [action.text];
     default:
       return state;
@@ -12,7 +12,7 @@ export default function categoryReducer(state = initialState, action) {
 
 export function category() {
   return {
-    type: checkBooks,
+    type: CHECKBOOKS,
     text: 'Under construction',
   };
 }

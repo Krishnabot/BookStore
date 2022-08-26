@@ -1,12 +1,16 @@
 import React from 'react';
 
 const BookInput = (props) => {
-  const { type, placeholder, refObj } = props;
+  const {
+    type, placeholder, change, value, name,
+  } = props;
   return (
     <input
-      ref={refObj}
+      name={name}
       className="book-input"
       type={type}
+      onChange={change}
+      value={value}
       placeholder={placeholder}
     />
   );
