@@ -22,12 +22,13 @@ const Books = () => {
         {bookList.map((book) => (
           <BookContainer
             name={book.title}
-            catagory="fantasy"
+            category={book.category}
             author={book.author}
             completed="34"
             id={book.id}
             key={book.key}
             Click={removeHandeler}
+            chapter="9"
           />
         ))}
       </div>

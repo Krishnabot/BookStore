@@ -52,6 +52,13 @@ const BookForm = () => {
           change={eventHandler}
           placeholder="Author"
         />
+        <BookInput
+          name="category"
+          type="text"
+          value={state.category}
+          change={eventHandler}
+          placeholder="category"
+        />
         <button type="submit" className="button">
           Add Book
         </button>
