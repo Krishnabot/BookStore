@@ -1,63 +1,48 @@
-const addingBooks = 'addingBooks';
-const removingBooks = 'removingBooks';
-const bookList = [
-  {
-    title: 'Harry Potter and Half Blood Prince',
-    author: 'J.K Rowling',
-    id: 0,
-  },
-  {
-    title: 'Lord Of the Rings The Fellowship of the Ring',
-    author: 'J. R. R. Tolkien',
-    id: 1,
-  },
-  {
-    title: 'Lord Of the Rings The Two Towers',
-    author: 'J. R. R. Tolkien',
-    id: 2,
-  },
-  {
-    title: 'Lord Of the Rings The Return of the King',
-    author: 'J. R. R. Tolkien',
-    id: 3,
-  },
-  {
-    title: 'Harry Potter and Philosphers Stone ',
-    author: 'J.K Rowling',
-    id: 4,
-  },
-];
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { v4 as uuid } from 'uuid';
+import { fetchBook, bookUrl } from '../api/consumeAPI';
 
-export default function bookReducer(state = bookList, action) {
-  switch (action.type) {
-    case addingBooks:
-      return [
-        ...state,
-        {
-          title: action.title,
-          author: action.author,
-          id: action.id,
-        },
-      ];
-    case removingBooks:
-      return state.filter((book) => (book.id !== action.id));
-    default:
-      return state;
-  }
-}
+const ADDINGBOOKS = 'books/ADDINGBOOKS';
+const REMOVEBOOKS = 'books/REMOVEBOOKS';
 
-export function addBook(Title, Author, Id) {
-  return {
-    type: addingBooks,
-    title: Title,
-    author: Author,
-    id: Id,
-  };
-}
+const addBook = createAsyncThunk(
+  ADDINGBOOKS,
+  async ({ title, author, category }, thunkAPI) => {
+    const book = {
+      item_id: uuid.create().toString(),
+      title,
+      author,
+      category,
+    };
+    await axios
+      .post(`${bookUrl}/`, book)
+      .then(() => thunkAPI.dispatch(fetchBook()));
+    const books = thunkAPI.getState().bookList;
+    return books;
+  },
+);
 
-export function removeBook(Id) {
-  return {
-    type: removingBooks,
-    id: Id,
-  };
-}
+const removeBook = createAsyncThunk(REMOVEBOOKS, async (id, thunkAPI) => {
+  await axios
+    .delete(`${bookUrl}/${id}`)
+    .then(() => thunkAPI.dispatch(fetchBook()));
+  const books = thunkAPI.getState.bookList;
+  return books;
+});
+
+const booksList = (state) => state.bookList;
+
+const storeSlice = createSlice({
+  name: 'books',
+  initialState: [],
+  extraReducers: {
+    [fetchBook.fulfilled]: (state, action) => action.payload,
+    [addBook.fulfilled]: (state, action) => action.payload,
+    [removeBook.fulfilled]: (state, action) => action.payload,
+  },
+});
+
+export {
+  addBook, removeBook, booksList, storeSlice,
+};
