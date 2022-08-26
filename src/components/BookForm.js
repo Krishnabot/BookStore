@@ -22,6 +22,7 @@ const BookForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     if (state.title === '') {
+      // eslint-disable-next-line no-alert
       alert('No empty ENtrance Allowed');
     } else {
       dispatch(addBook(state));
