@@ -1,0 +1,56 @@
+@font-face { font-family: MontserratBold; src: url('../assets/fonts/Montserrat-Bold.otf'); }
+@font-face { font-family: Robotoslab; src: url('../assets/fonts/roboto-slab.regular.ttf'); }
+@font-face { font-family: MontserratLight; src: url('../assets/fonts/Montserrat-Light.otf'); }
+.form {
+  margin: 4em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_text {
+  width: 10.875rem;
+  height: 1.5rem;
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  font-family: MontserratBold, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  gap: 5em;
+}
+
+.inputs > textarea {
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+textarea::placeholder {
+  font-family: MontserratLight, sans-serif;
+  padding: 0.4rem 0 0 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #c4c4c4;
+}
+
+.add_book{
+  width: 11.5rem;
+  height: 2.813rem;
+  margin-top: 1.188rem;
+  padding: 1rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #0290ff;
+  color: #fff;
+  font-family: RobotoSlab, sans-serif;
+}

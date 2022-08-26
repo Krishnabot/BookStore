@@ -65,7 +65,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5rem;
+  width: 100%;
   height: 2rem;
   margin: 0.188rem 0.6rem 0.125rem 0;
   font-family: RobotoSlab, sans-serif;
@@ -156,7 +156,7 @@
 .update > div > button {
   width: 11.5rem;
   height: 2.063rem;
-  margin: 0.75rem 0 0.563rem 3.688rem;
+  margin: 2.5rem 0 0.563rem 3.688rem;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
   background-color: #0290ff;

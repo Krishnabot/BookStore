@@ -1,6 +1,7 @@
 /* eslint-disable import/no-duplicates */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import styles from './BookForm.module.css';
 import { addBook } from '../redux/books/books';
 import BookInput from './BookInput';
 
@@ -23,7 +24,7 @@ const BookForm = () => {
     event.preventDefault();
     if (state.title === '') {
       // eslint-disable-next-line no-alert
-      alert('No empty ENtrance Allowed');
+      alert('No empty ENTRY Allowed');
     } else {
       dispatch(addBook(state));
       changeState({
@@ -36,30 +37,32 @@ const BookForm = () => {
 
   return (
     <>
-      <h2 className="form-text">Add New Books</h2>
-      <form className="form" onSubmit={submitHandler}>
-        <BookInput
-          name="title"
-          type="text"
-          value={state.title}
-          change={eventHandler}
-          placeholder="BooK Tiltle"
-        />
-        <BookInput
-          name="author"
-          type="text"
-          value={state.author}
-          change={eventHandler}
-          placeholder="Author"
-        />
-        <BookInput
-          name="category"
-          type="text"
-          value={state.category}
-          change={eventHandler}
-          placeholder="category"
-        />
-        <button type="submit" className="button">
+      <form className={styles.form} onSubmit={submitHandler}>
+        <p className={styles.form_text}>Add New Books</p>
+        <div className={styles.inputs}>
+          <BookInput
+            name="title"
+            type="text"
+            value={state.title}
+            change={eventHandler}
+            placeholder="BooK Tiltle"
+          />
+          <BookInput
+            name="author"
+            type="text"
+            value={state.author}
+            change={eventHandler}
+            placeholder="Author"
+          />
+          <BookInput
+            name="category"
+            type="text"
+            value={state.category}
+            change={eventHandler}
+            placeholder="category"
+          />
+        </div>
+        <button type="submit" className={styles.add_book}>
           Add Book
         </button>
       </form>
