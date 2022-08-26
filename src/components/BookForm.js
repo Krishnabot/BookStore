@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
-import Interaction from './Interaction';
 import BookInput from './BookInput';
 
 const BookForm = () => {
@@ -22,12 +21,16 @@ const BookForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(addBook(state));
-    changeState({
-      title: '',
-      author: '',
-      category: '',
-    });
+    if (state.title === '') {
+      alert('No empty ENtrance Allowed');
+    } else {
+      dispatch(addBook(state));
+      changeState({
+        title: '',
+        author: '',
+        category: '',
+      });
+    }
   };
 
   return (
@@ -48,7 +51,9 @@ const BookForm = () => {
           change={eventHandler}
           placeholder="Author"
         />
-        <Interaction name="Add Book" />
+        <button type="submit" className="button">
+          Add Book
+        </button>
       </form>
     </>
   );
