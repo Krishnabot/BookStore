@@ -1,6 +1,9 @@
 @font-face { font-family: MontserratBold; src: url('../assets/fonts/Montserrat-Bold.otf'); }
+
 @font-face { font-family: Robotoslab; src: url('../assets/fonts/roboto-slab.regular.ttf'); }
+
 @font-face { font-family: MontserratLight; src: url('../assets/fonts/Montserrat-Light.otf'); }
+
 .form {
   margin: 4em;
   padding: 1em;
@@ -43,7 +46,7 @@ textarea::placeholder {
   color: #c4c4c4;
 }
 
-.add_book{
+.add_book {
   width: 11.5rem;
   height: 2.813rem;
   margin-top: 1.188rem;

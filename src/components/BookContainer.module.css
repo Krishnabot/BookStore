@@ -1,4 +1,7 @@
 @font-face { font-family: Robotoslab; src: url('../assets/fonts/roboto-slab.regular.ttf'); }
+
+@font-face { font-family: MontserratLight; src: url('../assets/fonts/Montserrat-Light.otf'); }
+
 @font-face { font-family: MontserratBold; src: url('../assets/fonts/Montserrat-Bold.otf'); }
 
 .Book_wrap {
@@ -17,7 +20,7 @@
   height: 1.125rem;
   margin: 0 2.438rem 0 0;
   opacity: 0.5;
-  font-family: MontserratBold,sans-serif;
+  font-family: MontserratBold, sans-serif;
   font-size: 0.875rem;
   font-weight: bold;
   font-stretch: normal;
@@ -54,7 +57,7 @@
   color: #4386bf;
 }
 
-.Interaction_wrap{
+.Interaction_wrap {
   display: flex;
   flex-direction: row;
   gap: 1em;
@@ -78,17 +81,16 @@
   color: #4386bf;
   border: none;
   background-color: #fff;
-
 }
 
 .line {
-  width: 0.050rem;
+  width: 0.05rem;
   height: 1.5rem;
   margin: 0.75rem 1.063rem 0 0.938rem;
   border: solid 1px #e8e8e8;
 }
 
-.status_wrap{
+.status_wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,7 +98,7 @@
 }
 
 .completed {
-   width: 4.25rem;
+  width: 4.25rem;
   height: 2.438rem;
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-family: Montserrat, sans-serif;
@@ -109,12 +111,12 @@
   color: #121212;
 }
 
-.completedtxt{
-    width: 5rem;
+.completedtxt {
+  width: 5rem;
   height: 1.125rem;
   margin: 0.438rem 4.938rem 0.75rem 0.75rem;
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: MontserratLight, sans-serif;
   font-size: 0.875rem;
   font-weight: normal;
   font-stretch: normal;
@@ -124,7 +126,7 @@
   color: #121212;
 }
 
-.current_chaptertxt{
+.current_chaptertxt {
   width: 7.875rem;
   height: 1.125rem;
   margin: 0.063rem 3.625rem 0 3.688rem;
