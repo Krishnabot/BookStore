@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import styles from './NavBar.module.css';
 
-const Navbar = () => {
+const NavBar = () => {
   const links = [
     {
       id: 1,
@@ -16,9 +19,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="Nav-bar">
-      <h1>Awesome Bookstore</h1>
-      <div className="links-wrap">
+    <nav className={styles.navbar}>
+      <p className={styles.logo}>Awesome Bookstore</p>
+      <div className={styles.linkswrap}>
         {links.map((link) => (
           <li key={link.id}>
             <NavLink className="navlink" to={link.path}>
@@ -27,8 +30,11 @@ const Navbar = () => {
           </li>
         ))}
       </div>
+      <div className={styles.profile}>
+        <FontAwesomeIcon classname={styles.icon} icon={faUser} />
+      </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;

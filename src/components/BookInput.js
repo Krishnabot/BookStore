@@ -5,7 +5,7 @@ const BookInput = (props) => {
     type, placeholder, change, value, name,
   } = props;
   return (
-    <input
+    <textarea
       name={name}
       className="book-input"
       type={type}

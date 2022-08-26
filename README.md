@@ -14,14 +14,13 @@ A Book Strore CMS APP. Key features of App :-
 ## Resources
 - [Postman API Platform](https://www.postman.com/)
 - [Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739)
-- 
 
 ## Project SnapShot
-![Book Store SnapShot Not Available Yet]()
+![bookstore-snapshot](https://user-images.githubusercontent.com/40334904/186945544-31c964ae-095d-4992-80c4-4cb138176406.png)
 
 ## Live Demo 
 
-![Book Store live Demo Not Available Yet]()
+[Book Store live Demo](https://6308ed0e4981790066437216--effulgent-strudel-9934aa.netlify.app/)
 
 ## Getting Started 
 
@@ -73,7 +72,7 @@ Feel free to check the [issues page](https://github.com/Krishnabot/BookStore.git
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- [Zeplin project](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378)
+- [Design : Zeplin project](https://app.zeplin.io/project/5b35a9e13227086040f8eb75/screen/5b695e29bb8c844f118f9378)
 - [Soham De Roy from freecodecamp.org](https://www.freecodecamp.org/news/what-is-redux-store-actions-reducers-explained/)
 - [Prevent an empty submission in React](https://stackoverflow.com/questions/55088199/prevent-an-empty-submission-in-react)
 - [How To Use Axios with React](https://www.digitalocean.com/community/tutorials/react-axios-react)

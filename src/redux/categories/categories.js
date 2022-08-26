@@ -1,7 +1,7 @@
 const CHECKBOOKS = 'CHECKBOOKS';
-const initialState = [];
+const catList = [];
 
-export default function categoryReducer(state = initialState, action) {
+export default function categoryReducer(state = catList, action) {
   switch (action.type) {
     case CHECKBOOKS:
       return [action.text];
